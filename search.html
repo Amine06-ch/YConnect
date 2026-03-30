@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recherche - YConnect</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-wrapper">
+    <div class="phone-frame">
+
+      <header class="topbar">
+        <div class="topbar-left">
+          <img src="assets/logo.png" class="top-logo">
+          <div class="brand-text">
+            <h1>YConnect</h1>
+            <p>Recherche</p>
+          </div>
+        </div>
+      </header>
+
+      <section class="feed-header">
+        <span>RECHERCHE</span>
+        <span>YNOV</span>
+        <span>PROJETS</span>
+      </section>
+
+      <main class="feed">
+
+        <section class="search-bar">
+          <input type="text" placeholder="Rechercher un étudiant, projet..." />
+        </section>
+
+        <section class="filter-row">
+          <button class="filter-btn active">Tous</button>
+          <button class="filter-btn">Étudiants</button>
+          <button class="filter-btn">Projets</button>
+        </section>
+
+        <section class="results">
+
+          <div class="result-card">
+            <div class="result-avatar">S</div>
+            <div class="result-info">
+              <h3>Sofia Benali</h3>
+              <p>UI Designer • Recherche projet</p>
+            </div>
+            <button class="connect-btn">+ Connect</button>
+          </div>
+
+          <div class="result-card">
+            <div class="result-avatar">L</div>
+            <div class="result-info">
+              <h3>Lina Morel</h3>
+              <p>Dev Front-end • React</p>
+            </div>
+            <button class="connect-btn">+ Connect</button>
+          </div>
+
+          <div class="result-card">
+            <div class="result-avatar">M</div>
+            <div class="result-info">
+              <h3>Projet Mobile App</h3>
+              <p>Recherche développeur JS</p>
+            </div>
+            <button class="connect-btn">Voir</button>
+          </div>
+
+        </section>
+
+      </main>
+
+      <nav class="bottom-nav">
+        <button onclick="window.location.href='bot.html'">🤖</button>
+        <button onclick="window.location.href='index.html'">⌂</button>
+        <button class="active">⌕</button>
+        <button onclick="window.location.href='profile.html'">👤</button>
+      </nav>
+
+    </div>
+  </div>
+</body>
+</html>
