@@ -7,6 +7,7 @@ Tu dois avoir MySQL 8 (ou compatible) et un utilisateur avec les droits `CREATE`
 ```bash
 mysql -u <USER> -p < sql/01_schema.sql
 mysql -u <USER> -p < sql/02_demo.sql
+mysql -u <USER> -p < sql/04_frontend_compat.sql
 mysql -u <USER> -p < sql/03_queries.sql
 ```
 
