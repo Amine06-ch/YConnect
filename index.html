@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YConnect</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-wrapper">
+    <div class="phone-frame">
+
+      <header class="topbar">
+<a href="index.html" class="topbar-left logo-link">
+          <img src="assets/logo.png" alt="Logo YConnect" class="top-logo">
+          <div class="brand-text">
+            <h1>YConnect</h1>
+            <p>Connecte. Collabore. Réussis.</p>
+          </div>
+    </a>
+ <button class="icon-btn" onclick="window.location.href='messages.html'">✉</button>
+      </header>
+
+      <section class="feed-header">
+        <span>MON. YNOV</span>
+        <span>17 NOV</span>
+        <span>FRANCE</span>
+      </section>
+
+      <section class="quick-actions">
+        <div class="quick-card active" onclick="openModal()">
+          <span class="quick-icon">＋</span>
+          <p>Créer</p>
+        </div>
+
+        <div class="quick-card" onclick="window.location.href='profile.html'">
+          <span class="quick-icon">👤</span>
+          <p>Profil</p>
+        </div>
+
+        <div class="quick-card" onclick="window.location.href='messages.html'">
+          <span class="quick-icon">💬</span>
+          <p>Messages</p>
+        </div>
+
+        <div class="quick-card" onclick="window.location.href='bot.html'">
+          <span class="quick-icon">🤖</span>
+          <p>Bot IA</p>
+        </div>
+      </section>
+
+      <main class="feed">
+
+        <section class="profile-banner">
+          <div class="profile-left">
+            <div class="profile-avatar">Y</div>
+            <div>
+              <h2>Bienvenue, Yassine</h2>
+              <p>B2 Informatique • Front-end • UX/UI</p>
+            </div>
+          </div>
+          <button class="mini-btn" onclick="window.location.href='profile.html'">Voir profil</button>
+        </section>
+
+        <section class="campus-news">
+          <div class="news-title-row">
+            <h2>News Ynov</h2>
+            <span onclick="showAllNews()">Voir tout</span>
+          </div>
+
+          <div class="news-card">
+            <h3>Challenge 48h</h3>
+            <p>Dernière ligne droite avant la présentation de demain à 14h.</p>
+          </div>
+
+         <section class="news-card clickable-card" onclick="window.location.href='ymatch.html'">
+  <h3>Ymatch</h3>
+  <p>Nouvelles offres de stage et d'alternance disponibles cette semaine.</p>
+</section>
+<span onclick="window.location.href='ymatch.html'">Voir tout</span>
+
+        <article class="post-card">
+          <div class="post-top">
+            <div class="user">
+              <div class="avatar">A</div>
+              <div>
+                <h3>Username</h3>
+                <p>17 min</p>
+              </div>
+            </div>
+            <button class="dots">•••</button>
+          </div>
+
+          <p class="post-text">Hello, Ynov ! C’est génial !</p>
+
+          <div class="post-image"></div>
+
+          <div class="post-actions">
+            <span onclick="toggleLike(this)">♡</span>
+            <span>💬</span>
+            <span>↗</span>
+          </div>
+        </article>
+
+        <article class="post-card">
+          <div class="post-top">
+            <div class="user">
+              <div class="avatar">L</div>
+              <div>
+                <h3>Username_karyzoli</h3>
+                <p>27 min</p>
+              </div>
+            </div>
+            <button class="dots">•••</button>
+          </div>
+
+          <p class="post-text">Nouveau projet en cours...</p>
+
+          <div class="post-image"></div>
+
+          <div class="post-actions">
+            <span onclick="toggleLike(this)">♡</span>
+            <span>💬</span>
+            <span>↗</span>
+          </div>
+        </article>
+
+      </main>
+
+      <button class="floating-btn" onclick="openModal()">＋</button>
+
+      <nav class="bottom-nav">
+        <button onclick="window.location.href='bot.html'">🤖</button>
+        <button class="active">⌂</button>
+        <button onclick="window.location.href='search.html'">⌕</button>
+        <button onclick="window.location.href='messages.html'">💬</button>
+        <button onclick="window.location.href='profile.html'">👤</button>
+      </nav>
+
+    </div>
+  </div>
+
+  <div class="modal" id="postModal">
+    <div class="modal-content">
+      <h2>Créer un post</h2>
+      <textarea id="postInput" placeholder="Exprime-toi..."></textarea>
+      <div class="modal-actions">
+        <button onclick="closeModal()">Annuler</button>
+        <button onclick="publishPost()">Publier</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

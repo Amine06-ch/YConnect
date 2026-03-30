@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Recherche - YConnect</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-wrapper">
+    <div class="phone-frame">
+
+      <header class="topbar">
+        <a href="index.html" class="topbar-left logo-link">
+          <img src="assets/logo.png" alt="Logo YConnect" class="top-logo">
+          <div class="brand-text">
+            <h1>YConnect</h1>
+            <p>Recherche</p>
+          </div>
+        </a>
+
+        <button class="icon-btn" onclick="window.location.href='messages.html'">✉</button>
+      </header>
+
+      <section class="feed-header">
+        <span>RECHERCHE</span>
+        <span>YNOV</span>
+        <span>PROJETS</span>
+      </section>
+
+      <main class="feed">
+        <section class="search-bar">
+          <input id="searchInput" type="text" placeholder="Rechercher un étudiant, projet, Ynov..." />
+        </section>
+
+        <section class="filter-row">
+          <button class="filter-btn active" data-filter="tous">Tous</button>
+          <button class="filter-btn" data-filter="etudiant">Étudiants</button>
+          <button class="filter-btn" data-filter="projet">Projets</button>
+        </section>
+
+        <section class="results" id="resultsContainer"></section>
+      </main>
+
+      <nav class="bottom-nav">
+        <button onclick="window.location.href='bot.html'">🤖</button>
+        <button onclick="window.location.href='index.html'">⌂</button>
+        <button class="active">⌕</button>
+        <button onclick="window.location.href='messages.html'">💬</button>
+        <button onclick="window.location.href='profile.html'">👤</button>
+      </nav>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ymatch - YConnect</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-wrapper">
+    <div class="phone-frame">
+
+      <header class="topbar">
+        <a href="index.html" class="topbar-left logo-link">
+          <img src="assets/logo.png" alt="Logo YConnect" class="top-logo">
+          <div class="brand-text">
+            <h1>YConnect</h1>
+            <p>Ymatch</p>
+          </div>
+        </a>
+
+        <button class="icon-btn" onclick="window.location.href='messages.html'">✉</button>
+      </header>
+
+      <section class="feed-header">
+        <span>ALTERNANCE</span>
+        <span>STAGE</span>
+        <span>JOB</span>
+      </section>
+
+      <main class="feed">
+
+        <section class="job-card">
+          <h3>Développeur Front-end</h3>
+          <p>Paris • Alternance</p>
+          <p class="job-desc">Entreprise tech recherche étudiant motivé en HTML, CSS, JS.</p>
+          <button onclick="applyJob(this)">Postuler</button>
+        </section>
+
+        <section class="job-card">
+          <h3>UI/UX Designer</h3>
+          <p>Lyon • Stage</p>
+          <p class="job-desc">Startup cherche designer pour améliorer expérience utilisateur.</p>
+          <button onclick="applyJob(this)">Postuler</button>
+        </section>
+
+        <section class="job-card">
+          <h3>Développeur Full Stack</h3>
+          <p>Remote • Alternance</p>
+          <p class="job-desc">Projet web complet avec Node.js et React.</p>
+          <button onclick="applyJob(this)">Postuler</button>
+        </section>
+
+      </main>
+
+      <nav class="bottom-nav">
+        <button onclick="window.location.href='bot.html'">🤖</button>
+        <button onclick="window.location.href='index.html'">⌂</button>
+        <button onclick="window.location.href='search.html'">⌕</button>
+        <button onclick="window.location.href='messages.html'">💬</button>
+        <button onclick="window.location.href='profile.html'">👤</button>
+      </nav>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
