@@ -16,6 +16,147 @@ body {
   color: #ffffff;
 }
 
+/* =========================================================
+   Auth pages (login/register)
+   ========================================================= */
+
+.auth-feed {
+  padding: 16px 14px 90px;
+}
+
+.auth-card {
+  background: #ffffff;
+  border: 1px solid #e8edf5;
+  border-radius: 22px;
+  padding: 16px;
+  box-shadow: 0 10px 26px rgba(19, 23, 34, 0.06);
+  margin-bottom: 12px;
+}
+
+.auth-card h2 {
+  color: #131722;
+  font-size: 1.15rem;
+  margin-bottom: 6px;
+}
+
+.auth-card h3 {
+  color: #131722;
+  font-size: 1.0rem;
+  margin-bottom: 6px;
+}
+
+.auth-subtitle {
+  color: #6a7283;
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+}
+
+.auth-muted {
+  color: #6a7283;
+  font-size: 0.9rem;
+  line-height: 1.35;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.auth-label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: #1b2231;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.auth-input,
+.auth-textarea {
+  width: 100%;
+  border: 1px solid #e0e6f0;
+  border-radius: 14px;
+  padding: 12px 12px;
+  font-size: 0.95rem;
+  outline: none;
+  background: #fbfcff;
+}
+
+.auth-textarea {
+  resize: none;
+}
+
+.auth-input:focus,
+.auth-textarea:focus {
+  border-color: rgba(107, 168, 255, 0.9);
+  box-shadow: 0 0 0 4px rgba(107, 168, 255, 0.18);
+}
+
+.auth-primary-btn {
+  border: none;
+  border-radius: 16px;
+  padding: 12px 14px;
+  font-weight: 800;
+  cursor: pointer;
+  color: #0f1115;
+  background: linear-gradient(135deg, #6ba8ff, #73f0bc);
+  box-shadow: 0 12px 26px rgba(107, 168, 255, 0.18);
+}
+
+.auth-secondary-btn {
+  border: 1px solid #e0e6f0;
+  border-radius: 16px;
+  padding: 12px 14px;
+  font-weight: 800;
+  cursor: pointer;
+  color: #1b2231;
+  background: #ffffff;
+}
+
+.auth-links {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 6px;
+  font-size: 0.9rem;
+}
+
+.auth-links a {
+  color: #1b2231;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.auth-links a:hover {
+  text-decoration: underline;
+}
+
+.auth-alert {
+  border-radius: 16px;
+  padding: 10px 12px;
+  font-weight: 700;
+  font-size: 0.92rem;
+  margin-bottom: 10px;
+}
+
+.auth-alert.info {
+  background: rgba(107, 168, 255, 0.16);
+  border: 1px solid rgba(107, 168, 255, 0.35);
+  color: #1b2231;
+}
+
+.auth-alert.success {
+  background: rgba(115, 240, 188, 0.18);
+  border: 1px solid rgba(115, 240, 188, 0.45);
+  color: #1b2231;
+}
+
+.auth-alert.error {
+  background: rgba(255, 107, 107, 0.14);
+  border: 1px solid rgba(255, 107, 107, 0.35);
+  color: #1b2231;
+}
+
 .app-wrapper {
   width: 100%;
   display: flex;

@@ -6,7 +6,7 @@
   <title>Messages - YConnect</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body data-requires-auth="true">
   <div class="app-wrapper">
     <div class="phone-frame">
 
@@ -22,9 +22,9 @@
       </header>
 
       <section class="feed-header">
-        <span>MESSAGES</span>
-        <span>ÉQUIPE</span>
-        <span>YNOV</span>
+        <span id="tabCampus" style="cursor:pointer;">MON.YNOV</span>
+        <span id="tabFrance" style="cursor:pointer;">FRANCE</span>
+        <span id="tabCampusName">CAMPUS</span>
       </section>
 
       <main class="feed">
@@ -34,65 +34,40 @@
             <h2>Conversations</h2>
           </div>
 
-          <div class="conversation-item active-conversation">
-            <div class="conversation-avatar">L</div>
+          <div class="conversation-item active-conversation" id="convCampus" style="cursor:pointer;">
+            <div class="conversation-avatar" id="convCampusAvatar">Y</div>
             <div class="conversation-info">
-              <h3>Lina Morel</h3>
-              <p>On avance sur la maquette ?</p>
+              <h3 id="convCampusTitle">Mon campus</h3>
+              <p id="convCampusSubtitle">Salon du campus</p>
             </div>
-            <span class="conversation-time">14:22</span>
+            <span class="conversation-time" id="convCampusTime">—</span>
           </div>
 
-          <div class="conversation-item">
-            <div class="conversation-avatar">S</div>
+          <div class="conversation-item" id="convFrance" style="cursor:pointer;">
+            <div class="conversation-avatar">FR</div>
             <div class="conversation-info">
-              <h3>Sofia Benali</h3>
-              <p>Merci pour le partage !</p>
+              <h3>France</h3>
+              <p>Salon global Ynov</p>
             </div>
-            <span class="conversation-time">13:10</span>
-          </div>
-
-          <div class="conversation-item">
-            <div class="conversation-avatar">Y</div>
-            <div class="conversation-info">
-              <h3>Yassine K.</h3>
-              <p>Je t’envoie les visuels.</p>
-            </div>
-            <span class="conversation-time">Hier</span>
+            <span class="conversation-time" id="convFranceTime">—</span>
           </div>
         </section>
 
         <section class="chat-card">
           <div class="chat-header">
             <div class="chat-user">
-              <div class="conversation-avatar">L</div>
+              <div class="conversation-avatar" id="chatAvatar">Y</div>
               <div>
-                <h3>Lina Morel</h3>
-                <p>En ligne</p>
+                <h3 id="chatTitle">Mon Ynov</h3>
+                <p id="chatSubtitle">Salon</p>
               </div>
             </div>
           </div>
 
-          <div class="chat-messages">
-            <div class="message-bubble received">
-              Salut, tu peux me montrer la structure de la page d’accueil ?
-            </div>
+          <div class="chat-messages" id="chatMessages"></div>
 
-            <div class="message-bubble sent">
-              Oui, je finalise le design premium et je te l’envoie.
-            </div>
-
-            <div class="message-bubble received">
-              Parfait, pense aussi au bouton profil.
-            </div>
-
-            <div class="message-bubble sent">
-              Oui, il est déjà prêt.
-            </div>
-          </div>
-
-          <form class="message-form">
-            <input type="text" placeholder="Écrire un message..." />
+          <form class="message-form" onsubmit="ycSendRoomMessage(event)">
+            <input id="messageInput" type="text" placeholder="Écrire un message..." />
             <button type="submit">Envoyer</button>
           </form>
         </section>

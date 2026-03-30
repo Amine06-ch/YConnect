@@ -6,7 +6,7 @@
   <title>YConnect</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body data-requires-auth="true">
   <div class="app-wrapper">
     <div class="phone-frame">
 
@@ -18,13 +18,13 @@
             <p>Campus social app</p>
           </div>
         </div>
-        <button class="icon-btn">✉</button>
+        <button class="icon-btn" onclick="window.location.href='messages.html'">✉</button>
       </header>
 
       <section class="feed-header">
-        <span>MON. YNOV</span>
+        <span style="cursor:pointer;" onclick="window.location.href='messages.html?room=campus'">MON. YNOV</span>
         <span>17 NOV</span>
-        <span>FRANCE</span>
+        <span style="cursor:pointer;" onclick="window.location.href='messages.html?room=france'">FRANCE</span>
       </section>
 
       <section class="quick-actions">
@@ -43,7 +43,7 @@
           <p>Messages</p>
         </div>
 
-        <div class="quick-card">
+        <div class="quick-card" onclick="window.location.href='bot.html'">
           <span class="quick-icon">🤖</span>
           <p>Bot IA</p>
         </div>
@@ -59,7 +59,7 @@
               <p>B2 Informatique • Front-end • UX/UI</p>
             </div>
           </div>
-          <button class="mini-btn">Voir profil</button>
+          <button class="mini-btn" onclick="window.location.href='profile.html'">Voir profil</button>
         </section>
 
         <section class="campus-news">
