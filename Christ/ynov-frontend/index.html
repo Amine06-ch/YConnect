@@ -1,156 +1,466 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>YConnect</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap"
+    rel="stylesheet" />
 </head>
+
 <body>
   <div class="app-wrapper">
     <div class="phone-frame">
 
+      <!-- Ambient FX -->
+      <div class="ambient" aria-hidden="true">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+        <div class="noise"></div>
+      </div>
+
+      <!-- TOPBAR -->
       <header class="topbar">
-<a href="index.html" class="topbar-left logo-link">
-          <img src="assets/logo.png" alt="Logo YConnect" class="top-logo">
-          <div class="brand-text">
-            <h1>YConnect</h1>
-            <p>Connecte. Collabore. Réussis.</p>
+        <a href="index.html" class="topbar-brand">
+          <div class="logo-mark">
+            <svg width="16" height="16" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M4 4L10 16L16 4" stroke="white" stroke-width="2.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
           </div>
-    </a>
- <button class="icon-btn" onclick="window.location.href='messages.html'">✉</button>
+
+          <div>
+            <span class="brand-name">YConnect</span>
+            <span class="brand-tagline">Connecte · Collabore · Réussis</span>
+          </div>
+        </a>
+
+        <button class="topbar-action" type="button" aria-label="Ouvrir les messages"
+          onclick="window.location.href='messages.html'">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+          </svg>
+          <span class="notif-badge">3</span>
+        </button>
       </header>
 
-      <section class="feed-header">
-        <span>MON. YNOV</span>
-        <span>17 NOV</span>
-        <span>FRANCE</span>
-      </section>
-
-      <section class="quick-actions">
-        <div class="quick-card active" onclick="openModal()">
-          <span class="quick-icon">＋</span>
-          <p>Créer</p>
+      <!-- DATE STRIP -->
+      <section class="date-strip" aria-label="Informations campus">
+        <div class="ds-pill">
+          <span class="ds-key">Campus</span>
+          <span class="ds-val">Ynov</span>
         </div>
-
-        <div class="quick-card" onclick="window.location.href='profile.html'">
-          <span class="quick-icon">👤</span>
-          <p>Profil</p>
+        <div class="ds-divider"></div>
+        <div class="ds-pill">
+          <span class="ds-key">Aujourd’hui</span>
+          <span class="ds-val accent" id="live-date">31 MAR</span>
         </div>
-
-        <div class="quick-card" onclick="window.location.href='messages.html'">
-          <span class="quick-icon">💬</span>
-          <p>Messages</p>
-        </div>
-
-        <div class="quick-card" onclick="window.location.href='bot.html'">
-          <span class="quick-icon">🤖</span>
-          <p>Bot IA</p>
+        <div class="ds-divider"></div>
+        <div class="ds-pill">
+          <span class="ds-key">Localisation</span>
+          <span class="ds-val">Paris</span>
         </div>
       </section>
 
-      <main class="feed">
+      <!-- SCROLLABLE CONTENT -->
+      <main class="content-scroll">
 
-        <section class="profile-banner">
-          <div class="profile-left">
-            <div class="profile-avatar">Y</div>
-            <div>
-              <h2>Bienvenue, Yassine</h2>
-              <p>B2 Informatique • Front-end • UX/UI</p>
+        <!-- Quick actions -->
+        <section class="quick-strip">
+          <button class="qcard qcard--create" type="button" onclick="openModal()">
+            <div class="qcard-ico">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <line x1="5" y1="12" x2="19" y2="12" />
+              </svg>
             </div>
-          </div>
-          <button class="mini-btn" onclick="window.location.href='profile.html'">Voir profil</button>
+            <span>Créer</span>
+          </button>
+
+          <button class="qcard" type="button" onclick="window.location.href='profile.html'">
+            <div class="qcard-ico">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                <circle cx="12" cy="7" r="4" />
+              </svg>
+            </div>
+            <span>Profil</span>
+          </button>
+
+          <button class="qcard" type="button" onclick="window.location.href='messages.html'">
+            <div class="qcard-ico">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+              </svg>
+            </div>
+            <span>Messages</span>
+          </button>
+
+          <button class="qcard qcard--ai" type="button" onclick="window.location.href='bot.html'">
+            <div class="qcard-ico">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="11" width="18" height="11" rx="2" />
+                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                <circle cx="12" cy="16" r="1" fill="currentColor" stroke="none" />
+              </svg>
+            </div>
+            <span>Bot IA</span>
+          </button>
         </section>
 
-        <section class="campus-news">
-          <div class="news-title-row">
-            <h2>News Ynov</h2>
-            <span onclick="showAllNews()">Voir tout</span>
-          </div>
-
-          <div class="news-card">
-            <h3>Challenge 48h</h3>
-            <p>Dernière ligne droite avant la présentation de demain à 14h.</p>
-          </div>
-
-         <section class="news-card clickable-card" onclick="window.location.href='ymatch.html'">
-  <h3>Ymatch</h3>
-  <p>Nouvelles offres de stage et d'alternance disponibles cette semaine.</p>
-</section>
-<span onclick="window.location.href='ymatch.html'">Voir tout</span>
-
-        <article class="post-card">
-          <div class="post-top">
-            <div class="user">
-              <div class="avatar">A</div>
-              <div>
-                <h3>Username</h3>
-                <p>17 min</p>
-              </div>
+        <!-- Hero / profile banner -->
+        <section class="profile-banner clickable-card" onclick="window.location.href='profile.html'">
+          <div class="pb-left">
+            <div class="pb-av">Y</div>
+            <div class="pb-text">
+              <span class="pb-greet">Bienvenue 👋</span>
+              <strong class="pb-name">Yassine</strong>
+              <span class="pb-role">B2 · Front-end · UX/UI</span>
             </div>
-            <button class="dots">•••</button>
           </div>
 
-          <p class="post-text">Hello, Ynov ! C’est génial !</p>
-
-          <div class="post-image"></div>
-
-          <div class="post-actions">
-            <span onclick="toggleLike(this)">♡</span>
-            <span>💬</span>
-            <span>↗</span>
+          <div class="pb-cta">
+            <span>Voir profil</span>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="9 18 15 12 9 6" />
+            </svg>
           </div>
-        </article>
 
-        <article class="post-card">
-          <div class="post-top">
-            <div class="user">
-              <div class="avatar">L</div>
-              <div>
-                <h3>Username_karyzoli</h3>
-                <p>27 min</p>
-              </div>
+          <div class="pb-glow"></div>
+        </section>
+
+        <!-- Highlights -->
+        <section class="block">
+          <div class="block-head">
+            <h2 class="block-title">Temps fort du jour</h2>
+          </div>
+
+          <div class="news-track">
+            <div class="ncard ncard--dark">
+              <span class="ncard-tag ncard-tag--live">⚡ Live</span>
+              <h3>Challenge 48h</h3>
+              <p>Dernière ligne droite pour finaliser le projet avant la présentation.</p>
+              <div class="ncard-shimmer"></div>
             </div>
-            <button class="dots">•••</button>
+
+            <div class="ncard ncard--glass clickable-card" onclick="window.location.href='ymatch.html'">
+              <span class="ncard-tag ncard-tag--new">💼 Carrière</span>
+              <h3>Ymatch</h3>
+              <p>Découvre de nouvelles offres de stage, alternance et collaboration.</p>
+            </div>
+
+            <div class="ncard ncard--teal">
+              <span class="ncard-tag ncard-tag--event">📅 Campus</span>
+              <h3>BDE · Soirée</h3>
+              <p>Le campus se retrouve ce vendredi pour un événement étudiant.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- News Ynov -->
+        <section class="block">
+          <div class="block-head">
+            <h2 class="block-title">News Ynov</h2>
+            <button class="see-all" type="button" onclick="showAllNews()">Voir tout →</button>
           </div>
 
-          <p class="post-text">Nouveau projet en cours...</p>
+          <div class="news-track">
+            <div class="ncard ncard--glass">
+              <span class="ncard-tag ncard-tag--new">🧠 IA</span>
+              <h3>Atelier produit</h3>
+              <p>Une session dédiée à la conception d’apps utiles pour les étudiants.</p>
+            </div>
 
-          <div class="post-image"></div>
+            <div class="ncard ncard--teal">
+              <span class="ncard-tag ncard-tag--event">🎤 Pitch</span>
+              <h3>Session démo</h3>
+              <p>Présente ton concept et récupère du feedback de ta promo.</p>
+            </div>
 
-          <div class="post-actions">
-            <span onclick="toggleLike(this)">♡</span>
-            <span>💬</span>
-            <span>↗</span>
+            <div class="ncard ncard--dark">
+              <span class="ncard-tag ncard-tag--live">🚀 Build</span>
+              <h3>Nouveau sprint</h3>
+              <p>Les équipes accélèrent sur les maquettes et prototypes de fin de semaine.</p>
+              <div class="ncard-shimmer"></div>
+            </div>
           </div>
-        </article>
+        </section>
 
+        <!-- Feed posts -->
+        <section class="block">
+          <div class="block-head">
+            <h2 class="block-title">Fil d’actualité</h2>
+          </div>
+
+          <article class="post" style="animation-delay:.05s">
+            <div class="post-top">
+              <div class="post-who">
+                <div class="av av--teal">L</div>
+                <div>
+                  <span class="post-name">Lea Martin</span>
+                  <span class="post-time">Il y a 17 min</span>
+                </div>
+              </div>
+
+              <button class="post-menu" type="button" aria-label="Options du post">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                  <circle cx="12" cy="5" r="1.8" />
+                  <circle cx="12" cy="12" r="1.8" />
+                  <circle cx="12" cy="19" r="1.8" />
+                </svg>
+              </button>
+            </div>
+
+            <p class="post-txt">
+              Hello Ynov 🚀 Je viens de finaliser une nouvelle direction visuelle pour notre projet campus.
+              Hâte d’avoir vos retours.
+            </p>
+
+            <div class="post-media post-media--a"></div>
+
+            <div class="post-acts">
+              <button class="pact like-btn" type="button" onclick="toggleLike(this)">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                </svg>
+                <span>24</span>
+              </button>
+
+              <button class="pact" type="button">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                </svg>
+                <span>8</span>
+              </button>
+
+              <button class="pact" type="button">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="18" cy="5" r="3" />
+                  <circle cx="6" cy="12" r="3" />
+                  <circle cx="18" cy="19" r="3" />
+                  <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" />
+                  <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
+                </svg>
+                <span>Partager</span>
+              </button>
+            </div>
+          </article>
+
+          <article class="post" style="animation-delay:.13s">
+            <div class="post-top">
+              <div class="post-who">
+                <div class="av av--blue">C</div>
+                <div>
+                  <span class="post-name">Christ MVE</span>
+                  <span class="post-time">Il y a 27 min</span>
+                </div>
+              </div>
+
+              <button class="post-menu" type="button" aria-label="Options du post">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                  <circle cx="12" cy="5" r="1.8" />
+                  <circle cx="12" cy="12" r="1.8" />
+                  <circle cx="12" cy="19" r="1.8" />
+                </svg>
+              </button>
+            </div>
+
+            <p class="post-txt">
+              Nouveau projet en cours 💻 On construit une expérience plus premium pour YConnect.
+              Qui veut collaborer sur la partie front ou UI ?
+            </p>
+
+            <div class="post-media post-media--b"></div>
+
+            <div class="post-acts">
+              <button class="pact like-btn" type="button" onclick="toggleLike(this)">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                </svg>
+                <span>11</span>
+              </button>
+
+              <button class="pact" type="button">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                </svg>
+                <span>3</span>
+              </button>
+
+              <button class="pact" type="button">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="18" cy="5" r="3" />
+                  <circle cx="6" cy="12" r="3" />
+                  <circle cx="18" cy="19" r="3" />
+                  <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" />
+                  <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
+                </svg>
+                <span>Partager</span>
+              </button>
+            </div>
+          </article>
+
+          <article class="post" style="animation-delay:.2s">
+            <div class="post-top">
+              <div class="post-who">
+                <div class="av av--teal">S</div>
+                <div>
+                  <span class="post-name">Sofia Benali</span>
+                  <span class="post-time">Il y a 42 min</span>
+                </div>
+              </div>
+
+              <button class="post-menu" type="button" aria-label="Options du post">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                  <circle cx="12" cy="5" r="1.8" />
+                  <circle cx="12" cy="12" r="1.8" />
+                  <circle cx="12" cy="19" r="1.8" />
+                </svg>
+              </button>
+            </div>
+
+            <p class="post-txt">
+              J’ai besoin de feedback sur une maquette mobile. Je cherche des avis sur la lisibilité,
+              la navigation et les micro-interactions.
+            </p>
+
+            <div class="post-media post-media--a"></div>
+
+            <div class="post-acts">
+              <button class="pact like-btn" type="button" onclick="toggleLike(this)">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                </svg>
+                <span>19</span>
+              </button>
+
+              <button class="pact" type="button">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                </svg>
+                <span>6</span>
+              </button>
+
+              <button class="pact" type="button">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="18" cy="5" r="3" />
+                  <circle cx="6" cy="12" r="3" />
+                  <circle cx="18" cy="19" r="3" />
+                  <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" />
+                  <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
+                </svg>
+                <span>Partager</span>
+              </button>
+            </div>
+          </article>
+        </section>
+
+        <div style="height: 20px;"></div>
       </main>
 
-      <button class="floating-btn" onclick="openModal()">＋</button>
+      <!-- FAB -->
+      <button class="fab" type="button" aria-label="Créer un post" onclick="openModal()">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <line x1="12" y1="5" x2="12" y2="19" />
+          <line x1="5" y1="12" x2="19" y2="12" />
+        </svg>
+      </button>
 
-      <nav class="bottom-nav">
-        <button onclick="window.location.href='bot.html'">🤖</button>
-        <button class="active">⌂</button>
-        <button onclick="window.location.href='search.html'">⌕</button>
-        <button onclick="window.location.href='messages.html'">💬</button>
-        <button onclick="window.location.href='profile.html'">👤</button>
+      <!-- BOTTOM NAV -->
+      <nav class="bnav" aria-label="Navigation principale">
+        <button class="bnav-item" type="button" aria-label="Bot IA" onclick="window.location.href='bot.html'">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+            <rect x="3" y="11" width="18" height="11" rx="2" />
+            <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+            <circle cx="12" cy="16" r="1" fill="currentColor" stroke="none" />
+          </svg>
+        </button>
+
+        <button class="bnav-item bnav-item--active" type="button" aria-label="Accueil">
+          <div class="bnav-active-pill">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+              <polyline points="9 22 9 12 15 12 15 22" />
+            </svg>
+          </div>
+        </button>
+
+        <button class="bnav-item" type="button" aria-label="Recherche" onclick="window.location.href='search.html'">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+            <circle cx="11" cy="11" r="8" />
+            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+          </svg>
+        </button>
+
+        <button class="bnav-item" type="button" aria-label="Messages" onclick="window.location.href='messages.html'">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+          </svg>
+        </button>
+
+        <button class="bnav-item" type="button" aria-label="Profil" onclick="window.location.href='profile.html'">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+            <circle cx="12" cy="7" r="4" />
+          </svg>
+        </button>
       </nav>
-
     </div>
   </div>
 
+  <!-- MODAL -->
   <div class="modal" id="postModal">
-    <div class="modal-content">
-      <h2>Créer un post</h2>
-      <textarea id="postInput" placeholder="Exprime-toi..."></textarea>
-      <div class="modal-actions">
-        <button onclick="closeModal()">Annuler</button>
-        <button onclick="publishPost()">Publier</button>
+    <div class="modal-scrim" onclick="closeModal()"></div>
+
+    <div class="modal-sheet">
+      <div class="sheet-handle"></div>
+
+      <div class="sheet-header">
+        <div class="av av--teal" style="width:40px;height:40px;border-radius:13px;font-size:.95rem">Y</div>
+        <div>
+          <strong class="sheet-uname">Yassine</strong>
+          <span class="sheet-scope">Partager avec le campus</span>
+        </div>
+
+        <button class="sheet-close" type="button" aria-label="Fermer" onclick="closeModal()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+      </div>
+
+      <textarea id="postInput" class="sheet-ta" placeholder="Qu'est-ce qui se passe sur le campus ?"></textarea>
+
+      <div class="sheet-footer">
+        <div class="sheet-tools">
+          <button class="stool" type="button">📷</button>
+          <button class="stool" type="button">🔗</button>
+          <button class="stool" type="button">😊</button>
+        </div>
+
+        <div class="sheet-btns">
+          <button class="btn-cancel" type="button" onclick="closeModal()">Annuler</button>
+          <button class="btn-publish" type="button" onclick="publishPost()">Publier</button>
+        </div>
       </div>
     </div>
   </div>
 
   <script src="script.js"></script>
+  <script>
+    const mo = ['JAN', 'FÉV', 'MAR', 'AVR', 'MAI', 'JUN', 'JUL', 'AOÛ', 'SEP', 'OCT', 'NOV', 'DÉC'];
+    const nd = new Date();
+    document.getElementById('live-date').textContent = nd.getDate() + ' ' + mo[nd.getMonth()];
+  </script>
 </body>
+
 </html>

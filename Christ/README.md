@@ -1,5 +1,4 @@
 
-
 # YConnect
 
 YConnect est une application web pensée pour les étudiants Ynov.  

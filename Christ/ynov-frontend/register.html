@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Inscription - YConnect</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
   <div class="app-wrapper">
     <div class="phone-frame auth-screen compact-auth-screen">
@@ -18,10 +20,25 @@
 
       <main class="auth-main compact-auth-main">
         <div class="auth-card premium-auth-card compact-auth-card">
-          
+
           <div class="auth-card-header compact-auth-header">
             <h2>Inscription</h2>
             <span>Créer un compte</span>
+          </div>
+
+          <div class="auth-form-group">
+            <label for="registerFirstName">Prénom</label>
+            <input id="registerFirstName" type="text" placeholder="Ton prénom" />
+          </div>
+
+          <div class="auth-form-group">
+            <label for="registerLastName">Nom</label>
+            <input id="registerLastName" type="text" placeholder="Ton nom" />
+          </div>
+
+          <div class="auth-form-group">
+            <label for="registerClass">Filière / Classe</label>
+            <input id="registerClass" type="text" placeholder="B2 Informatique / B1 Design..." />
           </div>
 
           <div class="auth-form-group">
@@ -49,4 +66,5 @@
 
   <script src="script.js"></script>
 </body>
+
 </html>

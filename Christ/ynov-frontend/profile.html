@@ -1,46 +1,100 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Profil - YConnect</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
   <div class="app-wrapper">
     <div class="phone-frame">
 
+      <!-- Ambient background -->
+      <div class="ambient">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+        <div class="noise"></div>
+      </div>
+
+      <!-- Topbar -->
       <header class="topbar">
         <a href="index.html" class="topbar-left logo-link">
-          <img src="assets/logo.png" alt="Logo YConnect" class="top-logo">
+          <img src="assets/logo.png" alt="Logo YConnect" class="top-logo" />
           <div class="brand-text">
             <h1>YConnect</h1>
             <p>Mon profil</p>
           </div>
         </a>
 
-        <button class="icon-btn" onclick="window.location.href='messages.html'">✉</button>
+        <button class="icon-btn" type="button" aria-label="Messagerie" onclick="window.location.href='messages.html'">
+          ✉
+        </button>
       </header>
 
-      <section class="feed-header">
-        <span>PROFIL</span>
-        <span>ÉTUDIANT</span>
-        <span>YNOV</span>
+      <!-- Header strip -->
+      <section class="date-strip" aria-label="Informations profil">
+        <div class="ds-pill">
+          <span class="ds-key">Vue</span>
+          <span class="ds-val accent">PROFIL</span>
+        </div>
+        <div class="ds-divider"></div>
+        <div class="ds-pill">
+          <span class="ds-key">Statut</span>
+          <span class="ds-val">ÉTUDIANT</span>
+        </div>
+        <div class="ds-divider"></div>
+        <div class="ds-pill">
+          <span class="ds-key">Campus</span>
+          <span class="ds-val">YNOV</span>
+        </div>
       </section>
 
       <main class="feed">
 
+        <!-- Hero profile -->
         <section class="profile-page-card">
           <div class="big-avatar">Y</div>
           <h2 id="profileName">Yassine Karim</h2>
           <p class="profile-role">B2 Informatique • Front-end Developer</p>
           <p class="profile-bio" id="profileBio">
-            Étudiant passionné par le développement web, le design moderne et la création d’applications utiles pour la vie étudiante.
+            Étudiant passionné par le développement web, le design moderne et la création d’applications utiles pour la
+            vie étudiante.
           </p>
 
-          <button class="profile-main-btn" onclick="editProfile()">Modifier le profil</button>
+          <button class="profile-main-btn" type="button" onclick="editProfile()">
+            Modifier le profil
+          </button>
         </section>
 
+        <!-- Quick actions -->
+        <section class="block">
+          <div class="block-head">
+            <h2 class="block-title">Accès rapide</h2>
+          </div>
+
+          <div class="quick-strip">
+            <button class="qcard qcard--ai" type="button" onclick="window.location.href='messages.html'">
+              <span class="qcard-ico">💬</span>
+              <span>Messages</span>
+            </button>
+
+            <button class="qcard qcard--ai" type="button" onclick="window.location.href='search.html'">
+              <span class="qcard-ico">⌕</span>
+              <span>Réseau</span>
+            </button>
+
+            <button class="qcard qcard--create" type="button" onclick="window.location.href='bot.html'">
+              <span class="qcard-ico">✨</span>
+              <span>IA Coach</span>
+            </button>
+          </div>
+        </section>
+
+        <!-- Stats -->
         <section class="stats-row">
           <div class="stat-box">
             <h3>24</h3>
@@ -56,51 +110,139 @@
           </div>
         </section>
 
+        <!-- Personal card -->
+        <section class="profile-banner clickable-card">
+          <div class="pb-glow"></div>
+
+          <div class="pb-left">
+            <div class="profile-avatar">YK</div>
+            <div class="pb-text">
+              <span class="pb-greet">Identité numérique</span>
+              <span class="pb-name">Profil créatif & technique</span>
+              <span class="pb-role">Front-end • UI • Expérience utilisateur</span>
+            </div>
+          </div>
+
+          <div class="pb-cta">Actif</div>
+        </section>
+
+        <!-- Skills -->
         <section class="profile-section-card">
           <div class="section-title-row">
             <h2>Compétences</h2>
           </div>
 
-          <div class="skills-list">
-            <span class="skill-pill">HTML</span>
-            <span class="skill-pill">CSS</span>
-            <span class="skill-pill">JavaScript</span>
-            <span class="skill-pill">UI Design</span>
-            <span class="skill-pill">Responsive</span>
-            <span class="skill-pill">GitHub</span>
+          <div class="results">
+            <div class="result-card">
+              <div class="result-avatar">H</div>
+              <div class="result-info">
+                <h3>HTML / Structure</h3>
+                <p>Création de pages claires, organisées et sémantiques.</p>
+              </div>
+            </div>
+
+            <div class="result-card">
+              <div class="result-avatar">C</div>
+              <div class="result-info">
+                <h3>CSS / UI moderne</h3>
+                <p>Interfaces premium, responsive et cohérentes visuellement.</p>
+              </div>
+            </div>
+
+            <div class="result-card">
+              <div class="result-avatar">J</div>
+              <div class="result-info">
+                <h3>JavaScript</h3>
+                <p>Interactions dynamiques et logique front-end utile.</p>
+              </div>
+            </div>
+
+            <div class="result-card">
+              <div class="result-avatar">U</div>
+              <div class="result-info">
+                <h3>UI / UX Design</h3>
+                <p>Conception d’interfaces intuitives, lisibles et engageantes.</p>
+              </div>
+            </div>
           </div>
         </section>
 
+        <!-- AI summary -->
         <section class="profile-section-card">
           <div class="section-title-row">
             <h2>Résumé IA</h2>
           </div>
 
           <p class="ai-summary">
-            Yassine est un étudiant en informatique spécialisé en front-end, avec un fort intérêt pour l’UX/UI et la création d’interfaces modernes, claires et intuitives.
+            Yassine est un étudiant en informatique orienté front-end, avec une vraie sensibilité produit...
           </p>
         </section>
 
+        <!-- Goals -->
         <section class="profile-section-card">
           <div class="section-title-row">
             <h2>Projet recherché</h2>
           </div>
 
           <p class="profile-text">
-            Je cherche à rejoindre des projets liés au développement web, au design d’interface ou aux applications étudiantes.
+            Je cherche à rejoindre des projets liés au développement web...
           </p>
+        </section>
 
-          <button class="logout-btn" onclick="logout()">Se déconnecter</button>
+        <!-- Logout -->
+        <section class="profile-section-card">
+          <div class="section-title-row">
+            <h2>Session</h2>
+          </div>
+
+          <button class="logout-btn" type="button" onclick="logout()">
+            Se déconnecter
+          </button>
         </section>
 
       </main>
 
-      <nav class="bottom-nav">
-        <button onclick="window.location.href='bot.html'">🤖</button>
-        <button onclick="window.location.href='index.html'">⌂</button>
-        <button onclick="window.location.href='search.html'">⌕</button>
-        <button onclick="window.location.href='messages.html'">💬</button>
-        <button class="active">👤</button>
+      <!-- Bottom nav style index -->
+      <nav class="bnav" aria-label="Navigation principale">
+
+        <button class="bnav-item" type="button" onclick="window.location.href='bot.html'">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+            <rect x="3" y="11" width="18" height="11" rx="2" />
+            <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+            <circle cx="12" cy="16" r="1" fill="currentColor" stroke="none" />
+          </svg>
+        </button>
+
+        <button class="bnav-item" type="button" onclick="window.location.href='index.html'">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+            <polyline points="9 22 9 12 15 12 15 22" />
+          </svg>
+        </button>
+
+        <button class="bnav-item" type="button" onclick="window.location.href='search.html'">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+            <circle cx="11" cy="11" r="8" />
+            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+          </svg>
+        </button>
+
+        <button class="bnav-item" type="button" onclick="window.location.href='messages.html'">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+          </svg>
+        </button>
+
+        <!-- ACTIVE -->
+        <button class="bnav-item bnav-item--active" type="button">
+          <div class="bnav-active-pill">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+              <circle cx="12" cy="7" r="4" />
+            </svg>
+          </div>
+        </button>
+
       </nav>
 
     </div>
@@ -108,4 +250,5 @@
 
   <script src="script.js"></script>
 </body>
+
 </html>

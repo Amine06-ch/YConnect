@@ -1,39 +1,83 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Connexion - YConnect</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
   <div class="app-wrapper">
     <div class="phone-frame auth-screen compact-auth-screen">
 
+      <!-- Ambient background -->
+      <div class="ambient" aria-hidden="true">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+        <div class="noise"></div>
+      </div>
+
+      <!-- Intro -->
       <div class="auth-top compact-auth-top">
-        <img src="assets/logo.png" alt="Logo YConnect" class="auth-logo-large compact-logo">
+        <img src="assets/logo.png" alt="Logo YConnect" class="auth-logo-large compact-logo" />
         <h1>YConnect</h1>
         <p>Connecte. Collabore. Réussis.</p>
       </div>
 
       <main class="auth-main compact-auth-main">
         <div class="auth-card premium-auth-card compact-auth-card">
+
           <div class="auth-card-header compact-auth-header">
             <h2>Connexion</h2>
-            <span>Bienvenue</span>
+            <span>Bienvenue sur ton espace étudiant</span>
+          </div>
+
+          <div class="profile-banner clickable-card" style="margin-bottom: 4px;">
+            <div class="pb-glow"></div>
+            <div class="pb-left">
+              <div class="pb-av">Y</div>
+              <div class="pb-text">
+                <span class="pb-greet">Accès sécurisé</span>
+                <span class="pb-name">Compte YConnect</span>
+                <span class="pb-role">Campus • Réseau • Projets • IA</span>
+              </div>
+            </div>
+            <div class="pb-cta">Login</div>
           </div>
 
           <div class="auth-form-group">
             <label for="loginEmail">Adresse email</label>
-            <input id="loginEmail" type="email" placeholder="exemple@ynov.com" />
+            <input id="loginEmail" type="email" placeholder="exemple@ynov.com" autocomplete="email" />
           </div>
 
           <div class="auth-form-group">
             <label for="loginPassword">Mot de passe</label>
-            <input id="loginPassword" type="password" placeholder="••••••••" />
+            <input id="loginPassword" type="password" placeholder="••••••••" autocomplete="current-password" />
           </div>
 
-          <button class="auth-submit-btn" onclick="login()">Se connecter</button>
+          <button class="auth-submit-btn" type="button" onclick="login()">
+            Se connecter
+          </button>
+
+          <div class="quick-strip" style="margin-top: 2px;">
+            <button class="qcard qcard--ai" type="button">
+              <span class="qcard-ico">🎓</span>
+              <span>Campus</span>
+            </button>
+
+            <button class="qcard qcard--ai" type="button">
+              <span class="qcard-ico">🤝</span>
+              <span>Réseau</span>
+            </button>
+
+            <button class="qcard qcard--create" type="button">
+              <span class="qcard-ico">✨</span>
+              <span>IA</span>
+            </button>
+          </div>
 
           <p class="auth-switch-text">
             Pas encore de compte ?
@@ -47,4 +91,5 @@
 
   <script src="script.js"></script>
 </body>
+
 </html>
