@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Connexion - YConnect</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-wrapper">
+    <div class="phone-frame auth-screen compact-auth-screen">
+
+      <div class="auth-top compact-auth-top">
+        <img src="assets/logo.png" alt="Logo YConnect" class="auth-logo-large compact-logo">
+        <h1>YConnect</h1>
+        <p>Connecte. Collabore. Réussis.</p>
+      </div>
+
+      <main class="auth-main compact-auth-main">
+        <div class="auth-card premium-auth-card compact-auth-card">
+
+          <div class="auth-card-header compact-auth-header">
+            <h2>Connexion</h2>
+            <span>Bienvenue</span>
+          </div>
+
+          <div class="auth-form-group">
+            <label for="loginEmail">Adresse email</label>
+            <input id="loginEmail" type="email" placeholder="exemple@ynov.com" />
+          </div>
+
+          <div class="auth-form-group">
+            <label for="loginPassword">Mot de passe</label>
+            <input id="loginPassword" type="password" placeholder="••••••••" />
+          </div>
+
+          <button class="auth-submit-btn" onclick="login()">Se connecter</button>
+
+          <p class="auth-switch-text">
+            Pas encore de compte ?
+            <a href="register.html">Créer un compte</a>
+          </p>
+
+        </div>
+      </main>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

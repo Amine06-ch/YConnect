@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Messages - YConnect</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-wrapper">
+    <div class="phone-frame">
+
+      <header class="topbar">
+<a href="index.html" class="topbar-left logo-link">
+          <img src="assets/logo.png" alt="Logo YConnect" class="top-logo">
+          <div class="brand-text">
+            <h1>YConnect</h1>
+            <p>Messagerie</p>
+          </div>
+    </a>
+    <button class="icon-btn" onclick="window.location.href='messages.html'">✉</button>
+      </header>
+
+      <section class="feed-header">
+        <span>MESSAGES</span>
+        <span>ÉQUIPE</span>
+        <span>YNOV</span>
+      </section>
+
+      <main class="feed">
+
+        <section class="messages-list-card">
+          <div class="section-title-row">
+            <h2>Conversations</h2>
+          </div>
+
+          <div class="conversation-item active-conversation">
+            <div class="conversation-avatar">L</div>
+            <div class="conversation-info">
+              <h3>Lina Morel</h3>
+              <p>On avance sur la maquette ?</p>
+            </div>
+            <span class="conversation-time">14:22</span>
+          </div>
+
+          <div class="conversation-item">
+            <div class="conversation-avatar">S</div>
+            <div class="conversation-info">
+              <h3>Sofia Benali</h3>
+              <p>Merci pour le partage !</p>
+            </div>
+            <span class="conversation-time">13:10</span>
+          </div>
+        </section>
+
+        <section class="chat-card">
+          <div class="chat-header">
+            <div class="chat-user">
+              <div class="conversation-avatar">L</div>
+              <div>
+                <h3>Lina Morel</h3>
+                <p>En ligne</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="chat-messages" id="chatMessages">
+            <div class="message-bubble received">
+              Salut, tu peux me montrer la structure de la page d’accueil ?
+            </div>
+
+            <div class="message-bubble sent">
+              Oui, je finalise le design premium et je te l’envoie.
+            </div>
+
+            <div class="message-bubble received">
+              Parfait, pense aussi au bouton profil.
+            </div>
+          </div>
+
+          <form class="message-form" onsubmit="sendMessage(event)">
+            <input id="messageInput" type="text" placeholder="Écrire un message..." />
+            <button type="submit">Envoyer</button>
+          </form>
+        </section>
+
+      </main>
+
+      <nav class="bottom-nav">
+        <button onclick="window.location.href='bot.html'">🤖</button>
+        <button onclick="window.location.href='index.html'">⌂</button>
+        <button onclick="window.location.href='search.html'">⌕</button>
+        <button class="active">💬</button>
+        <button onclick="window.location.href='profile.html'">👤</button>
+      </nav>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

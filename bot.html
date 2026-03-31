@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bot IA - YConnect</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-wrapper">
+    <div class="phone-frame">
+
+      <header class="topbar">
+  <a href="index.html" class="topbar-left logo-link">
+          <img src="assets/logo.png" alt="Logo YConnect" class="top-logo">
+          <div class="brand-text">
+            <h1>YConnect</h1>
+            <p>Assistant IA</p>
+          </div>
+    </a>
+      </header>
+
+      <section class="feed-header">
+        <span>BOT</span>
+        <span>IA</span>
+        <span>YNOV</span>
+      </section>
+
+      <main class="feed">
+        <div class="chat-container" id="chatContainer">
+          <div class="bot-message">
+            Bonjour 👋 je peux t’aider :
+            <br>• profil
+            <br>• projet
+            <br>• design
+          </div>
+        </div>
+
+        <form class="chat-form" onsubmit="sendBotMessage(event)">
+          <input id="userInput" type="text" placeholder="Pose ta question..." />
+          <button type="submit">➤</button>
+        </form>
+      </main>
+
+      <nav class="bottom-nav">
+        <button class="active">🤖</button>
+        <button onclick="window.location.href='index.html'">⌂</button>
+        <button onclick="window.location.href='search.html'">⌕</button>
+        <button onclick="window.location.href='messages.html'">💬</button>
+        <button onclick="window.location.href='profile.html'">👤</button>
+      </nav>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
