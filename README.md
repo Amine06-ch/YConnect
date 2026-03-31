@@ -1,167 +1,302 @@
-📄 README.md 
-#  YConnect – Réseau social étudiant Ynov
 
-##  Description
 
-YConnect est une application web permettant aux étudiants Ynov de :
+# YConnect
 
-- se connecter entre eux 
-- collaborer sur des projets 
-- communiquer via messagerie 
-- trouver des opportunités (stage / alternance) 
-- être assistés par une IA 
+YConnect est une application web pensée pour les étudiants Ynov.  
+Elle permet de centraliser la vie de campus dans une interface moderne, mobile-first et collaborative.
 
-Le projet a été réalisé dans le cadre d’un challenge 48h.
+L’application propose plusieurs espaces :
+- un **fil d’actualité**
+- une **messagerie**
+- une **recherche** de profils et projets
+- un **assistant IA**
+- un espace **Ymatch** pour les stages, alternances et jobs
+- un **profil étudiant**
+- des pages **connexion / inscription**
 
----
-
-## Objectifs
-
-- Centraliser la vie étudiante Ynov
-- Faciliter la mise en relation entre étudiants
-- Améliorer la collaboration sur les projets
-- Aider à l’insertion professionnelle via Ymatch
+L’objectif est de créer une plateforme utile à la collaboration, à la visibilité des étudiants et à la recherche d’opportunités.
 
 ---
 
-##  Fonctionnalités
+## Résumé du projet
 
-###  Authentification
-- Inscription (nom, prénom, classe, email, mot de passe)
-- Connexion
-- Déconnexion
-- (Backend en cours d’intégration)
+YConnect est une plateforme étudiante qui mélange :
+- réseau social campus
+- espace projet
+- aide IA
+- opportunités professionnelles
 
-###  Fil d’actualité
-- Création de posts
-- Suppression de posts
-- Interaction (like)
-- Affichage dynamique
-
-###  Profil
-- Informations utilisateur dynamiques
-- Compétences
-- Modification du profil
-
-###  Messagerie
-- Interface conversation
-- Envoi de messages (front fonctionnel)
-
-###  Recherche
-- Recherche d’étudiants et de projets
-- Filtres dynamiques
-
-###  IA
-- Assistant utilisateur
-- Aide sur profil, projets, alternance
-
-###  Ymatch
-- Liste d’offres (stage / alternance)
-- Intégration dans l’application
-
-###  News Ynov
-- Intégrées dans la page d’accueil
+Le projet met en avant :
+- une interface premium
+- un design system CSS réutilisable
+- une navigation type application mobile
+- des interactions JavaScript simples
+- une structure prête à être reliée à un backend
 
 ---
 
 ## Technologies utilisées
 
-### Frontend
-- HTML5
-- CSS3
-- JavaScript (Vanilla)
+### Front-end
+- HTML
+- CSS
+- JavaScript
 
-### Backend (en cours)
-- API (Node.js / PHP selon implémentation équipe)
-- Base de données MySQL
+### Back-end
+- Node.js
+- Express
+- TypeScript
+
+### Base de données
+- Prisma
+- base SQL selon ta configuration (`PostgreSQL`, `MySQL`, `SQLite`, etc.)
 
 ---
 
-##  Structure du projet
+## Structure du projet
 
-
+```bash
 YConnect/
-├── index.html
-├── login.html
-├── register.html
-├── profile.html
-├── messages.html
-├── search.html
-├── bot.html
-├── ymatch.html
-├── style.css
-├── script.js
-└── assets/
-
-
----
-
-##  Lancer le projet
-
-### Frontend uniquement
-1. Ouvrir le projet dans VS Code
-2. Installer Live Server
-3. Lancer `index.html`
-
-### Backend
-- En cours de développement par l’équipe
-- Connexion prévue avec API + MySQL
-
----
-
-##  Choix techniques
-
-- Architecture modulaire (frontend séparé backend)
-- Prototype rapide pour démonstration
-- Design mobile-first
-- Simulation temporaire côté front en attendant API
+│
+├── frontend/
+│   ├── index.html
+│   ├── bot.html
+│   ├── search.html
+│   ├── messages.html
+│   ├── profile.html
+│   ├── ymatch.html
+│   ├── login.html
+│   ├── register.html
+│   ├── style.css
+│   ├── script.js
+│   └── assets/
+│
+├── backend/
+│   ├── src/
+│   ├── prisma/
+│   │   └── schema.prisma
+│   ├── package.json
+│   ├── tsconfig.json
+│   └── .env
+│
+└── README.md
+````
 
 ---
 
-##  UX / UI
+## Comment lancer le projet
 
-- Interface inspirée des réseaux sociaux modernes
-- Design épuré et intuitif
-- Navigation simple
-- Expérience mobile optimisée
+## 1. Lancer le front
 
----
 
-##  Cahier des charges respecté
+### Option 1 — ouvrir directement le fichier
 
-✔ Inscription / connexion  
-✔ Fil d’actualité  
-✔ News Ynov sur la même page  
-✔ Profil personnalisable  
-✔ Messagerie  
-✔ Ymatch  
-✔ Fonction IA  
-✔ UX/UI  
+Ouvre `index.html` dans ton navigateur.
+
+### Option 2 — utiliser Live Server
+
+Dans VS Code :
+
+* installe l’extension **Live Server**
+* clic droit sur `index.html`
+* clique sur **Open with Live Server**
 
 ---
 
-##  Améliorations futures
+## 2. Lancer le back
 
-- Connexion complète avec backend
-- Authentification sécurisée
-- Stockage en base MySQL
-- API IA réelle
-- Notifications
-- Upload de médias
+Dans le dossier backend :
+
+```bash
+cd backend
+npm install
+npm run dev
+```
+
+Dans ton cas, si ton projet s’appelle `ynov-backend`, ça peut être :
+
+```bash
+cd ynov-backend
+npm install
+npm run dev
+```
+
+Si tout est bien configuré, le serveur démarre sur le port défini dans ton projet, par exemple :
+
+```bash
+Server running on port 5000
+```
 
 ---
 
-## Équipe
+## 3. Configuration `.env`
 
-Projet réalisé en équipe dans le cadre du challenge Ynov.
--
--
--
--
--
+Vérifie que ton fichier `.env` existe dans le backend.
+
+Exemple classique :
+
+```env
+PORT=5000
+DATABASE_URL="file:./dev.db"
+JWT_SECRET="ton_secret"
+GEMINI_API_KEY="ta_cle_api"
+```
+
+Selon ton projet, `DATABASE_URL` peut pointer vers :
+
+* SQLite
+* PostgreSQL
+* MySQL
 
 ---
 
-##  Présentation
+## Prisma
 
-YConnect est une solution complète qui connecte les étudiants, facilite la collaboration et améliore leur accès aux opportunités professionnelles.
+Prisma sert à gérer la base de données et les modèles.
+
+Le fichier principal est :
+
+```bash
+prisma/schema.prisma
+```
+
+---
+
+## Commandes Prisma utiles
+
+### Générer le client Prisma
+
+```bash
+npx prisma generate
+```
+
+### Appliquer les migrations en développement
+
+```bash
+npx prisma migrate dev
+```
+
+### Réinitialiser la base
+
+```bash
+npx prisma migrate reset
+```
+
+### Ouvrir Prisma Studio
+
+```bash
+npx prisma studio
+```
+
+### Pousser le schéma sans migration
+
+```bash
+npx prisma db push
+```
+
+---
+
+## Ordre conseillé pour lancer Prisma
+
+Quand tu récupères le projet pour la première fois :
+
+```bash
+cd backend
+npm install
+npx prisma generate
+npx prisma migrate dev
+npm run dev
+```
+
+Si tu veux juste synchroniser rapidement la base sans créer de migration :
+
+```bash
+npx prisma db push
+```
+
+---
+
+## Exemple complet de démarrage
+
+### Front
+
+```bash
+cd frontend
+```
+
+Puis ouvrir `index.html` avec Live Server.
+
+### Back
+
+```bash
+cd backend
+npm install
+npx prisma generate
+npx prisma migrate dev
+npm run dev
+```
+
+---
+
+## Si Prisma ne marche pas
+
+Vérifie :
+
+* que `DATABASE_URL` est bien renseigné dans `.env`
+* que `schema.prisma` existe
+* que Prisma est installé dans les dépendances
+
+Installation classique :
+
+```bash
+npm install prisma @prisma/client
+```
+
+Puis :
+
+```bash
+npx prisma generate
+```
+
+---
+
+## Fonctionnalités principales
+
+* publication de contenu
+* navigation entre plusieurs pages
+* assistant IA
+* messagerie
+* moteur de recherche
+* profil étudiant
+* opportunités Ymatch
+* authentification
+
+---
+
+## Améliorations futures
+
+* authentification réelle
+* données persistantes
+* messagerie temps réel
+* recherche reliée à la base
+* intégration IA réelle
+* notifications
+* mode clair / sombre
+* dashboard étudiant
+
+---
+
+## Auteur
+
+Projet académique autour de **YConnect**, plateforme étudiante orientée :
+
+lien git: https://github.com/Amine06-ch/YConnect.git
+
+* collaboration
+* réseau
+* innovation
+* opportunités
+* accompagnement IA
+
+```
+
